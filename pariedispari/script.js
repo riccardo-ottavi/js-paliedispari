@@ -1,8 +1,11 @@
 //scelta utente e inserimento numero
 let userChoice = prompt("scegli pari o dispari");
-while (userChoice != "pari" && userChoice != "dispari"){
+while (userChoice !== "pari" && userChoice !== "dispari"){
+    userChoice = prompt("scegli pari o dispari");
     console.log("inserisci una scelta valida")
 }
+
+
 
 if (userChoice === "pari") {
     console.log("hai scelto pari");
