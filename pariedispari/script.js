@@ -23,13 +23,25 @@ let randomNum =  (Math.random() *5 )+ 1;
 randomNum = Math.floor(randomNum);
 console.log("E' stato generato il " + randomNum);
 
-
+let finalNum = parseInt(userNum) + parseInt(randomNum);
+console.log("la somma dei numeri è " + finalNum);
 
 
 
 //stabilisci se pari o dispari (funzione)
-function isEven() {
-    
+function checkIfEven(number) {
+    let isEven = null;
+    if (number % 2 === 0) {
+        isEven = true;
+    }else {
+        isEven = false;
+    }
+}
+
+if (checkIfEven(finalNum) === true) {
+    console.log("il numero è pari!");
+}else {
+    console.log("il numero è dispari!");
 }
 
 //dichiara il vincitore
