@@ -32,9 +32,9 @@ console.log("la somma dei numeri è " + finalNum);
 function checkIfEven(number) {
     let isEven = null;
     if (number % 2 === 0) {
-        isEven = true;
+        return isEven = true;
     }else {
-        isEven = false;
+        return isEven = false;
     }
 }
 
@@ -45,3 +45,12 @@ if (checkIfEven(finalNum) === true) {
 }
 
 //dichiara il vincitore
+if (userChoice === "pari" && checkIfEven(finalNum) === true) {
+    console.log("hai vinto!");
+}else if (userChoice === "pari" && checkIfEven(finalNum) === false) {
+    console.log("hai perso!");
+}else if (userChoice === "dispari" && checkIfEven(finalNum) === true) {
+    console.log("hai perso!");
+}else if (userChoice === "dispari" && checkIfEven(finalNum) === false) {
+    console.log("hai vinto!");
+}
