@@ -12,45 +12,47 @@ if (userChoice === "pari") {
 
 //input numero
 let userNum = prompt("inserisci un numero da 1 a 5");
-while (userChoice < 1 && userChoice > 5){
-    console.log("inserisci una scelta valida")
-}
+if (userNum < 1 || userNum > 5){
+    console.log("hai scelto un numero non valido")
+}else {
+    console.log("Hai scelto " + userNum);
 
-console.log("Hai scelto " + userNum);
+    // genera e somma nuovo numero
+    let randomNum =  (Math.random() *5 )+ 1;
+    randomNum = Math.floor(randomNum);
+    console.log("E' stato generato il " + randomNum);
 
-// genera e somma nuovo numero
-let randomNum =  (Math.random() *5 )+ 1;
-randomNum = Math.floor(randomNum);
-console.log("E' stato generato il " + randomNum);
-
-let finalNum = parseInt(userNum) + parseInt(randomNum);
-console.log("la somma dei numeri è " + finalNum);
-
+    let finalNum = parseInt(userNum) + parseInt(randomNum);
+    console.log("la somma dei numeri è " + finalNum);
 
 
-//stabilisci se pari o dispari (funzione)
-function checkIfEven(number) {
-    let isEven = null;
-    if (number % 2 === 0) {
-        return isEven = true;
+
+    //stabilisci se pari o dispari (funzione)
+    function checkIfEven(number) {
+        let isEven = null;
+        if (number % 2 === 0) {
+            return isEven = true;
+        }else {
+            return isEven = false;
+        }
+    }
+
+    if (checkIfEven(finalNum) === true) {
+        console.log("il numero è pari!");
     }else {
-        return isEven = false;
+        console.log("il numero è dispari!");
+    }
+
+    //dichiara il vincitore
+    if (userChoice === "pari" && checkIfEven(finalNum) === true) {
+        console.log("hai vinto!");
+    }else if (userChoice === "pari" && checkIfEven(finalNum) === false) {
+        console.log("hai perso!");
+    }else if (userChoice === "dispari" && checkIfEven(finalNum) === true) {
+        console.log("hai perso!");
+    }else if (userChoice === "dispari" && checkIfEven(finalNum) === false) {
+        console.log("hai vinto!");
     }
 }
 
-if (checkIfEven(finalNum) === true) {
-    console.log("il numero è pari!");
-}else {
-    console.log("il numero è dispari!");
-}
 
-//dichiara il vincitore
-if (userChoice === "pari" && checkIfEven(finalNum) === true) {
-    console.log("hai vinto!");
-}else if (userChoice === "pari" && checkIfEven(finalNum) === false) {
-    console.log("hai perso!");
-}else if (userChoice === "dispari" && checkIfEven(finalNum) === true) {
-    console.log("hai perso!");
-}else if (userChoice === "dispari" && checkIfEven(finalNum) === false) {
-    console.log("hai vinto!");
-}
