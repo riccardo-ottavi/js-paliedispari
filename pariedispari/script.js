@@ -1,1 +1,5 @@
-console.log("prova2");
+//scelta utente e inserimento numero
+
+// genera e somma nuovo numero
+
+//

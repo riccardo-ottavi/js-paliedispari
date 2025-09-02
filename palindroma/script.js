@@ -1,19 +1,20 @@
 //input utente
 let userInput = prompt("Inserisci una parola");
 
-//verifica se palindroma
-let isPalindroma = false;
-for (let i = 0; i < userInput.length; i++){
-    if (userInput[i] === userInput[userInput.length-i-1]){
-        isPalindroma = true;
-        
-    }else {
-        isPalindroma = false;
+function isPalindroma(word){
+    for(let i = 0; i < word.length; i++){
+        if(word[i] === word[word.length-1-i]){
+            return isPalindroma = true;
+        }else {
+            return isPalindroma = false;
+        }
     }
 }
 
-if(isPalindroma === true) {
-    console.log("La parola è palindroma!");
-}else {
-    console.log("la parola non è palindroma!");
+isPalindroma(userInput);
+
+if (isPalindroma === true) {
+    console.log("La parola è palindroma");
+}else{
+    console.log("La parola non è palindroma");
 }
